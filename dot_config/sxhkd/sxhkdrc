@@ -1,0 +1,34 @@
+####media keys
+#
+##state
+ctrl + alt + {KP_Enter,KP_4,KP_6}
+  playerctl {play-pause,previous,next} --player=spotify,GSConnect
+ctrl + alt + {KP_Enter,KP_Left,KP_Right}
+  playerctl {play-pause,previous,next} --player=spotify,GSConnect
+#
+##position
+ctrl + alt + {KP_7,KP_9}
+  playerctl position {20-,20+} --player=spotify,GSConnect
+ctrl + alt + {KP_Home,KP_Prior}
+  playerctl position {20-,20+} --player=spotify,GSConnect
+#
+###generic
+#
+##volume
+ctrl + alt + {KP_1,KP_3}
+  amixer set Master {2%-,2%+}
+ctrl + alt + {KP_End,KP_Next}
+  amixer set Master {2%-,2%+}
+#
+##play-pause
+ctrl + alt + KP_0
+  playerctl play-pause --ignore-player=spotify,GSConnect
+ctrl + alt + KP_Insert
+  playerctl play-pause --ignore-player=spotify,GSConnect
+
+####generic buttons
+#
+###logout without prompt
+ctrl + alt + Delete
+  gnome-session-quit --logout --no-prompt
+

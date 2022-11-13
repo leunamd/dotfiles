@@ -1,0 +1,12 @@
+[includeIf "gitdir/i:~/repos/anon/"]
+  path = ./.gitconfig-anon
+
+[includeIf "gitdir/i:~/repos/personal/"]
+  path = ./.gitconfig-personal
+
+[user]
+  name = manuel
+  email = <>
+[core]
+  sshCommand = /usr/bin/ssh
+

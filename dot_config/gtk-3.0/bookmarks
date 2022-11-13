@@ -1,0 +1,13 @@
+file:/// /
+file:///home/manuel/docker
+admin:///var/lib/docker/volumes volumes
+file:///mnt/f/data/backups backups
+file:///home/manuel/repos
+file:///home/manuel/Documents
+file:///home/manuel/Music
+file:///home/manuel/Pictures
+file:///home/manuel/Videos
+file:///home/manuel/Downloads
+file:///mnt/f/data/media media
+file:///mnt/f/data/torrents torrents
+file:///mnt/snapshots snapshots

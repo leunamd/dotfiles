@@ -1,0 +1,2 @@
+#!/bin/bash
+Discord --disable-smooth-scrolling --enable-gpu-rasterization
