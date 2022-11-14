@@ -14,6 +14,8 @@ import XMonad.Actions.SpawnOn
 import XMonad.Layout.PerWorkspace
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.DynamicProperty
+import XMonad.Util.Ungrab
+
 
 
 
@@ -166,6 +168,14 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_l), spawn "xscreensaver-command -lock")
     --start browser
     , ((modm            , xK_c), spawn "chrome")
+    --take a screenshot of entire display
+    , ((modm , xK_Print ), unGrab *> spawn "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png  -s")
+    --take a screenshot of focused window
+    , ((modm .|. shiftMask, xK_Print ), spawn "scrot ~/Pictures/Screenshots/window_%Y-%m-%d_%H-%M-%S.png -u")
+     --trake a screenshot of left monitor
+    , ((modm .|. controlMask, xK_Print ), spawn "scrot ~/Pictures/Screenshots/monitor0_%Y-%m-%d_%H-%M-%S.png -a 0,0,1920,1080")
+    --trake a screenshot of right monitor
+    , ((modm .|. mod1Mask, xK_Print ), spawn "scrot ~/Pictures/Screenshots/monitor1_%Y-%m-%d_%H-%M-%S.png -a 1920,0,1920,1080")
     ]
     ++
         -- mod-[1..9], Switch to workspace N
