@@ -168,7 +168,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_l), spawn "xscreensaver-command -lock")
     --start browser
     , ((modm            , xK_c), spawn "chrome")
-    --take a screenshot of entire display
+    --take a screenshot of selected region
     , ((modm , xK_Print ), unGrab *> spawn "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png  -s")
     --take a screenshot of focused window
     , ((modm .|. shiftMask, xK_Print ), spawn "scrot ~/Pictures/Screenshots/window_%Y-%m-%d_%H-%M-%S.png -u")
