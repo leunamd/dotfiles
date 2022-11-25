@@ -81,3 +81,6 @@ autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 indentkeys-=<:> expandtab
 "chezmoi automatic sync files
 autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
 
+set nobackup       "no backup files
+set nowritebackup  "only in case you don't want a backup file while editing
+set noswapfile     "no swap files
