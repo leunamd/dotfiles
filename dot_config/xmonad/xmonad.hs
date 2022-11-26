@@ -268,6 +268,7 @@ myManageHook = composeAll
     , resource  =? "kdesktop"         --> doIgnore
     , className =? "discord"          --> doShift (myWorkspaces !! 2)
     , className =? "TelegramDesktop"  --> doShift (myWorkspaces !! 2)
+    , className =? "frame"            --> doFloat
     , (stringProperty "WM_WINDOW_ROLE" =? "pop-up") --> doFloat
     ]
 
@@ -323,6 +324,7 @@ myStartupHook = do
   spawnOnce "sxhkd"
   spawnOnce "xscreensaver"
   spawnOnce "solaar --window=hide"
+  spawnOnce "frame"
   spawn "~/.config/xmonad/scripts/systray.sh"
   --foreground applications
   spawnOnce "discord"                                       --from ~/bin
