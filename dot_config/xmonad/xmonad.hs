@@ -316,6 +316,7 @@ myXmobarPP h =
 myStartupHook = do
   --background applications
   spawnOnce "~/.config/xmonad/scripts/volumeicon.sh"
+  spawnOnce "blueman-applet"
   spawnOnce "nm-applet"
   spawnOnce "nitrogen --restore"
   spawnOnce "picom"
