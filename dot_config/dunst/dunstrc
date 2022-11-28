@@ -7,7 +7,6 @@
 
     width= 590
     height= 250
-    #offset = 100x50
 
     indicate_hidden = yes
 
@@ -97,7 +96,7 @@
     max_icon_size = 150
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/ArchLabs-Light/16x16/status/:/usr/share/icons/ArchLabs-Dark/16x16/devices/
+    icon_path = /usr/share/icons/Adwaita/16x16/status:/usr/share/icons/Adwaita/16x16/devices/
 
     ### History ###
 
@@ -114,7 +113,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/firefox -new-tab
+    browser = chrome
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -153,9 +152,9 @@
     #              invoke it. If there are multiple and no default, open the context menu.
     # * close_current: Close current notification.
     # * close_all: Close all notifications.
-    mouse_left_click = close_current
-    mouse_middle_click = do_action
-    mouse_right_click = close_all
+    mouse_left_click = do_action
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
