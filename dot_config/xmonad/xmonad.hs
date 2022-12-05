@@ -269,6 +269,7 @@ myManageHook = composeAll
     , className =? "discord"          --> doShift (myWorkspaces !! 2)
     , className =? "TelegramDesktop"  --> doShift (myWorkspaces !! 2)
     , className =? "frame"            --> doFloat
+    , className =? "Spotify"          --> doShift (myWorkspaces !! 3)
     , (stringProperty "WM_WINDOW_ROLE" =? "pop-up") --> doFloat
     ]
 
@@ -358,7 +359,7 @@ main = do
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook,
-        handleEventHook    = myEventHook <+> dynamicPropertyChange "WM_NAME" (title=? "Spotify" --> doShift (myWorkspaces !! 3)),
+        handleEventHook    = myEventHook,
         startupHook        = myStartupHook,
         logHook            = dynamicLogWithPP $ myXmobarPP myXmobar
     }
