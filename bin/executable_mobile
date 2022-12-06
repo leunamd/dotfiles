@@ -1,5 +1,5 @@
 #!/bin/bash
 # via wireless debugging
-adb connect manuel-Xiaomi:39309
+adb connect manuel-Xiaomi:$1
 sleep 2
 /usr/bin/scrcpy &
