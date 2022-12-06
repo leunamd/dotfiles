@@ -1,5 +1,5 @@
 #!/bin/bash
-adb tcpip 5555
+# via wireless debugging
+adb connect manuel-Xiaomi:39309
 sleep 2
-adb connect manuel-Xiaomi:5555
 /usr/bin/scrcpy &
