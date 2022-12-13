@@ -22,7 +22,7 @@ import XMonad.Util.Ungrab
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "gnome-terminal"
+myTerminal      = "alacritty"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -315,6 +315,7 @@ myXmobarPP h =
 --
 -- By default, do nothing.
 myStartupHook = do
+  spawnOnce "xrandr --output DP-2 --mode 1920x1080 --rate 144 --primary --right-of HDMI-1 --auto"
   --background applications
   spawnOnce "~/.config/xmonad/scripts/volumeicon.sh"
   spawnOnce "blueman-applet"

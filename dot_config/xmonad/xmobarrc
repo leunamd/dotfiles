@@ -5,7 +5,7 @@ Config { font = "xft:Noto Sans Mono CJK KR:pixelsize=14:antialias=true:hinting=t
        , bgColor = "black"
        , fgColor = "grey"
        , alpha = 255
-       , position = TopSize L 93 24
+       , position = TopSize L 100 24
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
