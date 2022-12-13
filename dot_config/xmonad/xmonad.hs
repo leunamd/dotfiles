@@ -315,7 +315,7 @@ myXmobarPP h =
 --
 -- By default, do nothing.
 myStartupHook = do
-  spawnOnce "xrandr --output DP-2 --mode 1920x1080 --rate 144 --primary --right-of HDMI-1 --auto"
+  spawnOnce "xrandr --output DP-4 --mode 1920x1080 --rate 144 --primary --right-of HDMI-0 --auto"
   --background applications
   spawnOnce "~/.config/xmonad/scripts/volumeicon.sh"
   spawnOnce "blueman-applet"
