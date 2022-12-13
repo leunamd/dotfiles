@@ -322,7 +322,7 @@ myStartupHook = do
   spawnOnce "nm-applet"
   spawnOnce "dunst"
   spawnOnce "nitrogen --restore"
-  spawnOnce "picom"
+  spawnOnce "picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0"
   spawnOnce "xsettingsd"
   spawnOnce "xbindkeys"
   spawnOnce "sxhkd"
