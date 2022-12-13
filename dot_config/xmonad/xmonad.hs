@@ -323,7 +323,6 @@ myStartupHook = do
   spawnOnce "dunst"
   spawnOnce "nitrogen --restore"
   spawnOnce "picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0"
-  spawnOnce "xsettingsd"
   spawnOnce "xbindkeys"
   spawnOnce "sxhkd"
   spawnOnce "xscreensaver"
@@ -331,7 +330,7 @@ myStartupHook = do
   spawnOnce "frame"
   spawn "~/.config/xmonad/scripts/systray.sh"
   --foreground applications
-  spawnOnce "discord"                                       --from ~/bin
+  spawnOnce "discord --disable-smooth-scrolling"                                       --from ~/bin
   spawnOnce "telegram-desktop"
   spawnOnce "spotify"
 
