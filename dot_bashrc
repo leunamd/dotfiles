@@ -40,6 +40,8 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XMONAD_CONFIG_DIR=$HOME/.config/xmonad
 export XMONAD_CACHE_DIR=$HOME/.cache/xmonad
 export XMONAD_DATA_DIR=$HOME/.local/share/xmonad
+#aliases
+alias ls='ls --color=auto'
 
 
 #git fast commands
