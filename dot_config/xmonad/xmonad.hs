@@ -225,7 +225,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = onWorkspace "3" fullLayout $ standardLayout
+myLayout = onWorkspace "3" fullLayout $ onWorkspace "5" fullLayout $ standardLayout
   where
      standardLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
        where
@@ -269,6 +269,7 @@ myManageHook = composeAll
     , className =? "discord"          --> doShift (myWorkspaces !! 2)
     , className =? "TelegramDesktop"  --> doShift (myWorkspaces !! 2)
     , className =? "frame"            --> doFloat
+    , className =? "Steam"            --> doShift (myWorkspaces !! 4)
     --, className =? "Spotify"          --> doShift (myWorkspaces !! 3)
     , (stringProperty "WM_WINDOW_ROLE" =? "pop-up") --> doFloat
     ]
