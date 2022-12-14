@@ -1,2 +1,2 @@
 #!/bin/bash
-cd ~/Applications && ./ledger-live-desktop-2.49.2-linux-x86_64_8d7f2d495f2b6ef350f47f6ef36067f9.AppImage
+cd ~/Applications && ./ledger-live-desktop-2.50.1-linux-x86_64.AppImage
