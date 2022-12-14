@@ -1,5 +1,5 @@
 {
-  "version": 41,
+  "version": 42,
   "enable_file_log": true,
   "backend_threading": "Auto",
   "res_scale": 1,
@@ -29,6 +29,7 @@
   "enable_vsync": true,
   "enable_shader_cache": true,
   "enable_texture_recompression": false,
+  "enable_macro_hle": true,
   "enable_ptc": true,
   "enable_internet_access": false,
   "enable_fs_integrity_checks": true,
