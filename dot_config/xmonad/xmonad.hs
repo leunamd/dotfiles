@@ -335,6 +335,7 @@ myStartupHook = do
   spawnOnce "discord --disable-smooth-scrolling"                                       --from ~/bin
   spawnOnce "telegram-desktop"
   spawnOnce "spotify"
+  setWMName "LG3D"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
