@@ -360,7 +360,8 @@ main = do
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook,
-        handleEventHook    = myEventHook <+> dynamicPropertyChange "WM_NAME" (title=? "Spotify" --> doShift (myWorkspaces !! 3)),
+        handleEventHook    = myEventHook <+> dynamicPropertyChange "WM_NAME" (title=? "Spotify" --> doShift (myWorkspaces !! 3)) --spotify gets launched with empty wm class
+                                         <+> dynamicPropertyChange "WM_NAME" (title=? "Steam"   --> doShift (myWorkspaces !! 4)),--steam update popup gets launched with empty wm class
         startupHook        = myStartupHook,
         logHook            = dynamicLogWithPP $ myXmobarPP myXmobar
     }
