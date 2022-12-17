@@ -318,6 +318,7 @@ myXmobarPP h =
 myStartupHook = do
   spawnOnce "xrandr --output DP-4 --mode 1920x1080 --rate 144 --primary --right-of HDMI-0 --auto"
   --background applications
+  spawnOnce "lxsession"
   spawnOnce "~/.config/xmonad/scripts/volumeicon.sh"
   spawnOnce "blueman-applet"
   spawnOnce "nm-applet"
