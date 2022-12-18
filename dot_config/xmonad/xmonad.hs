@@ -13,9 +13,12 @@ import qualified Data.Map        as M
 import Data.Maybe (fromJust)
 import XMonad.Actions.SpawnOn
 import XMonad.Layout.PerWorkspace
+import XMonad.Layout.NoBorders
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.DynamicProperty
 import XMonad.Util.Ungrab
+import XMonad.Hooks.ManageHelpers
+
 
 
 
@@ -226,9 +229,9 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = onWorkspace "3" fullLayout $ onWorkspace "5" fullLayout $ standardLayout
+myLayout = lessBorders Never $ onWorkspaces ["3","4","5","6"] fullLayout $ standardLayout
   where
-     standardLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
+     standardLayout = avoidStruts (tiled ||| Mirror tiled ||| noBorders Full)
        where
          -- default tiling algorithm partitions the screen into two panes
          tiled   = Tall nmaster delta ratio
@@ -244,7 +247,7 @@ myLayout = onWorkspace "3" fullLayout $ onWorkspace "5" fullLayout $ standardLay
       
      --
      --custom layouts
-     fullLayout = avoidStruts $ Full      
+     fullLayout = avoidStruts $ noBorders Full      
  
   
 ------------------------------------------------------------------------
@@ -263,7 +266,16 @@ myLayout = onWorkspace "3" fullLayout $ onWorkspace "5" fullLayout $ standardLay
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "MPlayer"          --> doFloat
+    [ className =? "confirm"          --> doFloat
+    , className =? "file_progress"    --> doFloat
+    , className =? "dialog"           --> doFloat
+    , className =? "download"         --> doFloat
+    , className =? "error"            --> doFloat
+    , className =? "notification"     --> doFloat
+    , className =? "pinentry-gtk-2"   --> doFloat
+    , className =? "splash"           --> doFloat
+    , className =? "toolbar"          --> doFloat
+    , className =? "mpv"              --> doShift (myWorkspaces !! 5) 
     , className =? "Gimp"             --> doFloat
     , resource  =? "desktop_window"   --> doIgnore
     , resource  =? "kdesktop"         --> doIgnore
@@ -271,8 +283,9 @@ myManageHook = composeAll
     , className =? "TelegramDesktop"  --> doShift (myWorkspaces !! 2)
     , className =? "frame"            --> doFloat
     , className =? "Steam"            --> doShift (myWorkspaces !! 4)
-    --, className =? "Spotify"          --> doShift (myWorkspaces !! 3)
+    , (className =? "Google-chrome" <&&> resource =? "Dialog") --> doFloat
     , (stringProperty "WM_WINDOW_ROLE" =? "pop-up") --> doFloat
+    , isFullscreen --> doFullFloat
     ]
 
 ------------------------------------------------------------------------
