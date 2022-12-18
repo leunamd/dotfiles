@@ -247,7 +247,7 @@ myLayout = lessBorders Never $ onWorkspaces ["3","4","5","6"] fullLayout $ stand
       
      --
      --custom layouts
-     fullLayout = avoidStruts $ noBorders Full      
+     fullLayout = avoidStruts $ noBorders Full
  
   
 ------------------------------------------------------------------------
@@ -275,7 +275,7 @@ myManageHook = composeAll
     , className =? "pinentry-gtk-2"   --> doFloat
     , className =? "splash"           --> doFloat
     , className =? "toolbar"          --> doFloat
-    , className =? "mpv"              --> doShift (myWorkspaces !! 5) 
+    , className =? "mpv"              --> doShift (myWorkspaces !! 5)
     , className =? "Gimp"             --> doFloat
     , resource  =? "desktop_window"   --> doIgnore
     , resource  =? "kdesktop"         --> doIgnore
