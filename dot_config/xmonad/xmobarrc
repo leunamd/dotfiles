@@ -24,11 +24,12 @@ Config { font = "xft:Noto Sans Mono CJK KR:pixelsize=14:antialias=true:hinting=t
                                "--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Date "%a %F %H:%M:%S" "date" 10
-                    , Run Com ".config/xmonad/scripts/trayer-padding-icon.sh" [] "trayerpad" 20
+                    , Run Com "/bin/sh" ["-c",".config/xmonad/scripts/spotify.sh"] "music" 10
+                    , Run Com "/bin/sh" ["-c",".config/xmonad/scripts/trayer-padding-icon.sh"] "trayerpad" 10
                     , Run UnsafeStdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%UnsafeStdinReader% }\
-                    \{ %cpu% | %memory% | %LIPY% | <fc=#ee9a00>%date%</fc>| %trayerpad%"
+                    \{ <fc=#e5e4e2>%music%</fc> | %cpu% | %memory% | %LIPY% | <fc=#ee9a00>%date%</fc>| %trayerpad%"
        }
