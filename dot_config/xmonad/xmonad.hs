@@ -334,7 +334,6 @@ myStartupHook = do
   --background applications
   spawnOnce "lxsession"
   spawnOnce "~/.config/xmonad/scripts/volumeicon.sh"
-  spawnOnce "blueman-applet"
   spawnOnce "nm-applet"
   spawnOnce "dunst"
   spawnOnce "redshift-gtk"
