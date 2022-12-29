@@ -346,7 +346,7 @@ myStartupHook = do
   spawnOnce "frame"
   spawn "~/.config/xmonad/scripts/systray.sh"
   --foreground applications
-  spawnOnce "discord --disable-smooth-scrolling"                                       --from ~/bin
+  spawnOnce "discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy --disable-smooth-scrolling --disable-smooth-scrolling"
   spawnOnce "telegram-desktop"
   spawnOnce "spotify"
   setWMName "LG3D"
