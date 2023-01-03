@@ -344,7 +344,6 @@ myStartupHook = do
   spawnOnce "xscreensaver"
   spawnOnce "solaar --window=hide"
   spawnOnce "frame"
-  spawnOnce "marvel-snap-tracker"
   spawn "~/.config/xmonad/scripts/systray.sh"
   --foreground applications
   spawnOnce "discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy --disable-smooth-scrolling --disable-smooth-scrolling"
