@@ -21,7 +21,7 @@
     sidetone, equalizer]
   _battery: 4100
   _modelId: B03400000000
-  _sensitive: {thumb-scroll-invert: false}
+  _sensitive: {hires-smooth-invert: false, thumb-scroll-invert: false}
   _serial: DA19EAA6
   _unitId: DA19EAA6
   _wpid: B034
