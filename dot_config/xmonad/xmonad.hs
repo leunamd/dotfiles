@@ -282,6 +282,7 @@ myManageHook = composeAll
     , className =? "discord"          --> doShift (myWorkspaces !! 2)
     , className =? "TelegramDesktop"  --> doShift (myWorkspaces !! 2)
     , className =? "frame"            --> doFloat
+    , className =? "frame-canary"     --> doFloat
     , className =? "Steam"            --> doShift (myWorkspaces !! 4)
     , (className =? "Google-chrome" <&&> resource =? "Dialog") --> doFloat
     , (stringProperty "WM_WINDOW_ROLE" =? "pop-up") --> doFloat

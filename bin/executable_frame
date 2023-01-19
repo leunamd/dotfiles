@@ -1,2 +1,2 @@
 #!/bin/bash
-cd ~/Applications && ./Frame-0.5.0-beta.22.AppImage
+cd ~/Applications && ./Frame-latest.AppImage
