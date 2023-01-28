@@ -231,7 +231,9 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 --
 myLayout = lessBorders Screen $ onWorkspaces ["3","4","5","6"] fullLayout $ standardLayout
   where
-     standardLayout = avoidStruts ( tiled ||| Mirror tiled ||| noBorders Full)
+     standardLayout = avoidStruts ( tiled |||
+      --Mirror tiled |||
+      noBorders Full)
        where
          -- default tiling algorithm partitions the screen into two panes
          tiled   = Tall nmaster delta ratio
