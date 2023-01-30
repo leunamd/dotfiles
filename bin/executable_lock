@@ -1,0 +1,4 @@
+#!/bin/sh
+i3lock -c 000000 -e
+sleep 1
+xset dpms force off

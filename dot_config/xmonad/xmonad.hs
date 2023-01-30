@@ -169,7 +169,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- additionalKeys
     --
     --lock screen
-    , ((modm .|. shiftMask, xK_l), spawn "xscreensaver-command -lock")
+    , ((modm .|. shiftMask, xK_l), spawn "lock")
     --start browser
     , ((modm            , xK_c), spawn "chrome")
     --take a screenshot of selected region
@@ -345,7 +345,7 @@ myStartupHook = do
   spawnOnce "picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0"
   spawnOnce "xbindkeys"
   spawnOnce "sxhkd"
-  spawnOnce "xscreensaver"
+  spawnOnce "xss-lock lock"
   spawnOnce "solaar --window=hide"
   spawn "~/.config/xmonad/scripts/systray.sh"
   --foreground applications
