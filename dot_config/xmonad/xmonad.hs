@@ -286,6 +286,7 @@ myManageHook = composeAll
     , className =? "frame"            --> doFloat
     , className =? "frame-canary"     --> doFloat
     , className =? "Steam"            --> doShift (myWorkspaces !! 4)
+    , className ^? "steam_app_"       --> doShift (myWorkspaces !! 4)
     , (className =? "Google-chrome" <&&> resource =? "Dialog") --> doFloat
     , (stringProperty "WM_WINDOW_ROLE" =? "pop-up") --> doFloat
     , isFullscreen --> doFullFloat
