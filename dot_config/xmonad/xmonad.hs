@@ -172,6 +172,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_l), spawn "lock")
     --start browser
     , ((modm            , xK_c), spawn "chrome")
+    --start file manager
+    , ((modm            , xK_z), spawn "nautilus")
     --take a screenshot of selected region
     , ((modm , xK_Print ), unGrab *> spawn "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png  -s")
     --take a screenshot of focused window
