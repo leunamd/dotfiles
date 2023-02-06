@@ -341,6 +341,7 @@ myStartupHook = do
   spawnOnce "~/.config/xmonad/scripts/volumeicon.sh"
   spawnOnce "nm-applet"
   spawnOnce "dunst"
+  spawnOnce "blueman-applet"
   spawnOnce "redshift-gtk"
   spawnOnce "nitrogen --restore"
   spawnOnce "picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0 --unredir-if-possible"
