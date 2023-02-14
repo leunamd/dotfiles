@@ -21,10 +21,10 @@ Config { font = "xft:Noto Sans Mono CJK KR:pixelsize=14:antialias=true:hinting=t
                                           "--high","red",
                                           "--low","lightblue"] 36000
                     , Run Cpu ["-L","10","-H","70",
-                               "--normal","green","--high","red"] 10
+                               "--normal","green","--high","red","--ppad","2"] 10
                     , Run Memory ["-t","Mem: <usedratio>%",
                                   "-L","20","-H","80",
-                                  "--normal","green","--high","red"] 10
+                                  "--normal","green","--high","red","--ppad","2"] 10
                     , Run Date "%a %F %H:%M:%S" "date" 10
                     , Run Com "/bin/sh" ["-c",".config/xmonad/scripts/spotify.sh"] "music" 10
                     , Run Com "/bin/sh" ["-c",".config/xmonad/scripts/trayer-padding-icon.sh"] "trayerpad" 10
