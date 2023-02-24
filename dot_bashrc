@@ -42,7 +42,7 @@ export XMONAD_CACHE_DIR=$HOME/.cache/xmonad
 export XMONAD_DATA_DIR=$HOME/.local/share/xmonad
 #aliases
 alias ls='ls --color=auto'
-
+alias streamlink='streamlink --twitch-disable-ads'
 
 #git fast commands
 gcom() {
