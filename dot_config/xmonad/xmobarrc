@@ -29,5 +29,5 @@ Config { font            = "Bitstream Vera Sans Mono Bold 10"
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%UnsafeStdinReader% }\
-                    \{ <fc=#e5e4e2>%music%</fc> | %cpu% | %memory% | %LIPY% | <fc=#ee9a00>%date%</fc>| %trayerpad%"
+                    \{ <fc=gray>%music%</fc> | %cpu% | %memory% | %LIPY% | <fc=#ee9a00>%date%</fc>| %trayerpad%"
        }
