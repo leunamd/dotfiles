@@ -1,9 +1,8 @@
-Config { font = "xft:Noto Sans Mono CJK KR:pixelsize=14:antialias=true:hinting=true"
-       , additionalFonts = [ "xft:Noto Sans Mono:pixelsize=13:antialias=true:hinting=true"]
+Config { font = "Noto Sans Mono Normal 11"
        , borderColor = "black"
        , border = TopB
        , bgColor = "black"
-       , fgColor = "grey"
+       , fgColor = "white"
        , alpha = 255
        , position = TopSize L 100 24
        , textOffset = -1
