@@ -1,4 +1,8 @@
-Config { font = "Noto Sans Mono Normal 11"
+Config { font            = "Bitstream Vera Sans Mono Bold 10"
+       , additionalFonts = [ "Mononoki 11"
+                           , "Font Awesome 6 Free Solid 12"
+                           , "Font Awesome 6 Brands 12"
+                           ]
        , borderColor = "black"
        , border = TopB
        , bgColor = "black"
