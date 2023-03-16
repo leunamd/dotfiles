@@ -1,0 +1,2 @@
+#!/bin/bash
+cd ~/Applications && ./ProtonUp-Qt-2.7.7-x86_64.AppImage
