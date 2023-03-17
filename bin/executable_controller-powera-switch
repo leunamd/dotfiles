@@ -1,0 +1,2 @@
+#!/bin/bash
+xboxdrv --evdev /dev/input/event26 --config ~/.config/xboxdrv/powera-switch-controller.conf &
