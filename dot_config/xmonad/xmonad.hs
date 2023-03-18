@@ -292,6 +292,7 @@ myManageHook = composeAll
     , (className =? "Google-chrome" <&&> resource =? "Dialog") --> doFloat
     , (stringProperty "WM_WINDOW_ROLE" =? "pop-up") --> doFloat
     , isFullscreen --> doFullFloat
+    , isDialog --> doFloat
     ]
 
 ------------------------------------------------------------------------
