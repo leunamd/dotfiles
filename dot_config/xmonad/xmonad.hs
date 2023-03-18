@@ -178,9 +178,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm , xK_Print ), unGrab *> spawn "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png  -s")
     --take a screenshot of focused window
     , ((modm .|. shiftMask, xK_Print ), spawn "scrot ~/Pictures/Screenshots/window_%Y-%m-%d_%H-%M-%S.png -u")
-     --trake a screenshot of left monitor
+     --take a screenshot of left monitor
     , ((modm .|. controlMask, xK_Print ), spawn "scrot ~/Pictures/Screenshots/monitor0_%Y-%m-%d_%H-%M-%S.png -a 0,0,1920,1080")
-    --trake a screenshot of right monitor
+    --take a screenshot of right monitor
     , ((modm .|. mod1Mask, xK_Print ), spawn "scrot ~/Pictures/Screenshots/monitor1_%Y-%m-%d_%H-%M-%S.png -a 1920,0,1920,1080")
     ]
     ++
