@@ -1,2 +1,0 @@
-#!/bin/bash
-env LD_PRELOAD=/usr/local/lib/fix_steam_screensaver_\$LIB.so /usr/bin/steam
