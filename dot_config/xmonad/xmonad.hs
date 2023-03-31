@@ -337,7 +337,7 @@ myXmobarPP h =
 --
 -- By default, do nothing.
 myStartupHook = do
-  spawnOnce "xrandr --output DP-4 --mode 1920x1080 --rate 144 --primary --right-of HDMI-0 --auto"
+  spawnOnce "xrandr --output DP-4 --primary --mode 1920x1080 --rate 144 --right-of DVI-I-1-1 --output DVI-I-1-1 --mode 1920x1080 --output HDMI-1-1 --off"
   --background applications
   spawnOnce "/usr/lib/geoclue-2.0/demos/agent"
   spawnOnce "lxsession"
