@@ -231,7 +231,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = lessBorders Screen $ onWorkspaces ["3","4","5","6"] fullLayout $ standardLayout
+myLayout = lessBorders Screen $ onWorkspaces ["3","4","5","6","7"] fullLayout $ standardLayout
   where
      standardLayout = avoidStruts ( tiled |||
       --Mirror tiled |||
@@ -287,6 +287,7 @@ myManageHook = composeAll
     , className =? "TelegramDesktop"  --> doShift (myWorkspaces !! 2)
     , className =? "frame"            --> doFloat
     , className =? "frame-canary"     --> doFloat
+    , className =? "Virt-manager"     --> doShift (myWorkspaces !! 6)
     , className =? "Steam"            --> doShift (myWorkspaces !! 4)
     , className ^? "steam_app_"       --> doShift (myWorkspaces !! 4)
     , (className =? "Google-chrome" <&&> resource =? "Dialog") --> doFloat
