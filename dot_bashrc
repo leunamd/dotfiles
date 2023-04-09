@@ -45,6 +45,8 @@ export XMONAD_DATA_DIR=$HOME/.local/share/xmonad
 #aliases
 alias ls='ls --color=auto'
 alias streamlink='streamlink --twitch-ttvlol'
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias update-mkinit='sudo mkinitcpio -P'
 
 #git fast commands
 gcom() {
@@ -65,5 +67,8 @@ if [ -f `which powerline-daemon` ]; then
   . /usr/share/powerline/bindings/bash/powerline.sh
 fi
 
-
+#bash settings
+shopt -s autocd
+export HISTCONTROL="erasedups:ignorespace"
+shopt -s checkwinsize
 
