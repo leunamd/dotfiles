@@ -290,6 +290,7 @@ myManageHook = composeAll
     , className =? "Virt-manager"     --> doShift (myWorkspaces !! 6)
     , className =? "Steam"            --> doShift (myWorkspaces !! 4)
     , className ^? "steam_app_"       --> doShift (myWorkspaces !! 4)
+    , className =? "Spotify"          --> doShift (myWorkspaces !! 3)
     , (className =? "Google-chrome" <&&> resource =? "Dialog") --> doFloat
     , (stringProperty "WM_WINDOW_ROLE" =? "pop-up") --> doFloat
     , isFullscreen --> doFullFloat
@@ -386,8 +387,7 @@ main = do
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook,
-        handleEventHook    = myEventHook <+> dynamicPropertyChange "WM_NAME" (title=? "Spotify" --> doShift (myWorkspaces !! 3)) --spotify gets launched with empty wm class
-                                         <+> dynamicPropertyChange "WM_NAME" (title=? "Steam"   --> doShift (myWorkspaces !! 4)),--steam update popup gets launched with empty wm class
+        handleEventHook    = myEventHook <+> dynamicPropertyChange "WM_NAME" (title=? "Steam"   --> doShift (myWorkspaces !! 4)),--steam update popup gets launched with empty wm class
         startupHook        = myStartupHook,
         logHook            = dynamicLogWithPP $ myXmobarPP myXmobar
     }
