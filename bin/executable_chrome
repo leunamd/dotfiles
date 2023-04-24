@@ -1,2 +1,2 @@
 #!/bin/bash
-google-chrome-stable --enable-blink-features=MiddleClickAutoscroll --enable-features=VaapiVideoDecoder,VaapiVideoEncoder,WebUIDarkMode --force-dark-mode
+google-chrome-stable
