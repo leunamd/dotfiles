@@ -291,6 +291,7 @@ myManageHook = composeAll
     , className =? "Steam"            --> doShift (myWorkspaces !! 4)
     , className ^? "steam_app_"       --> doShift (myWorkspaces !! 4)
     , className =? "Spotify"          --> doShift (myWorkspaces !! 3)
+    , className =? "obsidian"         --> doShift (myWorkspaces !! 7)
     , (className =? "Google-chrome" <&&> resource =? "Dialog") --> doFloat
     , (stringProperty "WM_WINDOW_ROLE" =? "pop-up") --> doFloat
     , isFullscreen --> doFullFloat
