@@ -47,6 +47,8 @@ alias ls='ls --color=auto'
 alias streamlink='streamlink --twitch-ttvlol'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias update-mkinit='sudo mkinitcpio -P'
+alias schezmoi="sudo chezmoi --destination /etc --source /etc/chezmoi/data --working-tree /etc/chezmoi/data --config /etc/chezmoi/chezmoi.toml"
+
 
 #git fast commands
 gcom() {
