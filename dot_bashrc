@@ -49,6 +49,7 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias update-mkinit='sudo mkinitcpio -P'
 alias schezmoi='sudo chezmoi --destination /etc --source /etc/chezmoi/data --working-tree /etc/chezmoi/data --config /etc/chezmoi/chezmoi.toml'
 alias start-vm='sudo virsh start win10_ltsc'
+alias gpu-lspci='lspci -k | grep -A 3 -E "(VGA|3D)"'
 
 
 #git fast commands
