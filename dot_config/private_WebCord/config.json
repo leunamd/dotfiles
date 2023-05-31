@@ -5,7 +5,7 @@
                 "hide": true
             },
             "tray": {
-                "disable": true
+                "disable": false
             },
             "taskbar": {
                 "flash": true
@@ -18,7 +18,7 @@
         "privacy": {
             "blockApi": {
                 "science": true,
-                "typingIndicator": false,
+                "typingIndicator": true,
                 "fingerprinting": true
             },
             "permissions": {
