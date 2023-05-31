@@ -284,6 +284,7 @@ myManageHook = composeAll
     , resource  =? "desktop_window"   --> doIgnore
     , resource  =? "kdesktop"         --> doIgnore
     , className =? "discord"          --> doShift (myWorkspaces !! 2)
+    , className =? "WebCord"          --> doShift (myWorkspaces !! 2)
     , className =? "TelegramDesktop"  --> doShift (myWorkspaces !! 2)
     , className =? "frame"            --> doFloat
     , className =? "frame-canary"     --> doFloat
