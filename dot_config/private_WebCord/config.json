@@ -57,7 +57,7 @@
                 "enabled": true
             },
             "redirection": {
-                "warn": true
+                "warn": false
             },
             "optimize": {
                 "gpu": true
