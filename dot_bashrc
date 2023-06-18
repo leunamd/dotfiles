@@ -50,6 +50,7 @@ alias update-mkinit='sudo mkinitcpio -P'
 alias schezmoi='sudo chezmoi --destination /etc --source /etc/chezmoi/data --working-tree /etc/chezmoi/data --config /etc/chezmoi/chezmoi.toml'
 alias start-vm='sudo systemctl restart libvirtd && sudo virsh start win10_ltsc && looking-glass-client -F -S && sudo virsh destroy win10_ltsc --graceful'
 alias gpu-lspci='lspci -k | grep -A 3 -E "(VGA|3D)"'
+alias hotspot='sudo rfkill unblock all && sudo systemctl restart hostapd'
 
 
 #git fast commands
