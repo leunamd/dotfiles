@@ -296,6 +296,7 @@ myManageHook = composeAll
     , className =? "obsidian"         --> doShift (myWorkspaces !! 7)
     , className ^? "league"           --> doShift (myWorkspaces !! 4)
     , className ^? "riot"             --> doShift (myWorkspaces !! 4)
+    , className =? "leagueclientux.exe" --> doFloatAt 0 24
     , (className =? "Google-chrome" <&&> resource =? "Dialog") --> doFloat
     , (stringProperty "WM_WINDOW_ROLE" =? "pop-up") --> doFloat
     , isFullscreen --> doFullFloat
