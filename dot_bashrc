@@ -42,6 +42,8 @@ export XDG_DATA_DIRS=$HOME/.local/share/flatpak/exports/share:$XDG_DATA_DIRS
 export XMONAD_CONFIG_DIR=$HOME/.config/xmonad
 export XMONAD_CACHE_DIR=$HOME/.cache/xmonad
 export XMONAD_DATA_DIR=$HOME/.local/share/xmonad
+#vulkan
+export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
 #aliases
 alias ls='ls --color=auto'
 alias streamlink='streamlink --twitch-ttvlol'
