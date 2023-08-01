@@ -290,13 +290,14 @@ myManageHook = composeAll
     , className =? "frame-canary"     --> doFloat
     , className =? "Virt-manager"     --> doShift (myWorkspaces !! 6)
     , className =? "looking-glass-client" --> doShift (myWorkspaces !! 6)
-    , className =? "Steam"            --> doShift (myWorkspaces !! 4)
+    , className =? "steam"            --> doShift (myWorkspaces !! 4)
     , className ^? "steam_app_"       --> doShift (myWorkspaces !! 4)
     , className =? "Spotify"          --> doShift (myWorkspaces !! 3)
     , className =? "obsidian"         --> doShift (myWorkspaces !! 7)
     , className ^? "league"           --> doShift (myWorkspaces !! 4)
     , className ^? "riot"             --> doShift (myWorkspaces !! 4)
     , className =? "leagueclientux.exe" --> doFloatAt 0 24
+    , className =? "league of legends.exe" --> doShift (myWorkspaces !! 4)
     , (className =? "Google-chrome" <&&> resource =? "Dialog") --> doFloat
     , (stringProperty "WM_WINDOW_ROLE" =? "pop-up") --> doFloat
     , isFullscreen --> doFullFloat
