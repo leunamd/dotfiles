@@ -22,6 +22,7 @@ Config { font            = "Bitstream Vera Sans Mono Bold 10"
                     , Run Cpu ["-H","50","--high","red","--ppad","2"] 20
                     , Run Memory ["-t","Mem: <usedratio>%","-H","50","--high","red","--ppad","2"] 20
                     , Run Date "%a %d %b %Y - %H:%M:%S" "date" 10
+                    , Run Com "/bin/sh" ["-c","~/.config/xmonad/scripts/microphone-muted-status.sh"] "microphone" 10
                     , Run Com "/bin/sh" ["-c",".config/xmonad/scripts/spotify.sh"] "music" 20
                     , Run Com "/bin/sh" ["-c",".config/xmonad/scripts/trayer-padding-icon.sh"] "trayerpad" 20
                     , Run UnsafeStdinReader
@@ -29,5 +30,5 @@ Config { font            = "Bitstream Vera Sans Mono Bold 10"
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%UnsafeStdinReader% }\
-                    \{ <fc=gray>%music%</fc> | %cpu% | %memory% | %LIPY% | <fc=#ee9a00>%date%</fc>| %trayerpad%"
+                    \{<fc=red>%microphone%</fc> <fc=gray>%music%</fc> | %cpu% | %memory% | %LIPY% | <fc=#ee9a00>%date%</fc>| %trayerpad%"
        }
