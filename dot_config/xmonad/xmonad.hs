@@ -362,7 +362,7 @@ myStartupHook = do
   spawnOnce "solaar --window=hide"
   spawn "~/.config/xmonad/scripts/systray.sh"
   --foreground applications
-  spawnOnce "webcord"
+  spawnOnce "discord"
   spawnOnce "telegram-desktop"
   spawnOnce "spotify"
   spawnOnce "obsidian"
