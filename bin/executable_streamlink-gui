@@ -1,2 +1,2 @@
 #!/bin/bash
-cd ~/Applications && ./streamlink-twitch-gui-v2.2.0-x86_64.AppImage
+cd ~/Applications && ./streamlink-twitch-gui-v2.4.1-x86_64.AppImage
