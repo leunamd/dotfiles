@@ -57,6 +57,7 @@ fi
 case $(tty | cut -b9-) in
   (1) exec xmonad    ;;
   (2) exec qtile start;;
+  (3) exec Hyprland  ;;
 esac
 
 #exec xmonad
