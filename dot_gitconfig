@@ -10,3 +10,5 @@
 [core]
   sshCommand = /usr/bin/ssh
 
+[init]
+	defaultBranch = main
