@@ -1,4 +1,8 @@
 #!/bin/sh
-i3lock -c 000000 -e
-sleep 1
-xset dpms force off
+revert(){
+  xset +dpms dpms 0 0 300
+}
+trap revert HUP INT TERM
+xset dpms 0 0 5
+i3lock -c 000000 -e -n
+revert

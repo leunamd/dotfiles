@@ -169,7 +169,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- additionalKeys
     --
     --lock screen
-    , ((modm .|. shiftMask, xK_l), spawn "lock")
+    , ((modm .|. shiftMask, xK_l), spawn "loginctl lock-session")
     --start browser
     , ((modm            , xK_c), spawn "chrome")
     --start file manager
@@ -359,7 +359,8 @@ myStartupHook = do
   spawnOnce "picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0 --unredir-if-possible"
   spawnOnce "xbindkeys"
   spawnOnce "sxhkd"
-  spawnOnce "xss-lock lock"
+  spawnOnce "xset +dpms dpms 0 0 300"
+  spawnOnce "xss-lock --transfer-sleep-lock -- lock"
   spawnOnce "solaar --window=hide"
   spawn "~/.config/xmonad/scripts/systray.sh"
   --foreground applications
