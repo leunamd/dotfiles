@@ -364,6 +364,7 @@ myStartupHook = do
   spawnOnce "xset +dpms dpms 0 0 300"
   spawnOnce "xss-lock --transfer-sleep-lock -- lock"
   spawnOnce "solaar --window=hide"
+  spawnOnce "joystickwake"
   spawn "~/.config/xmonad/scripts/systray.sh"
   --foreground applications
   spawnOnce "discord"
