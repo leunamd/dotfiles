@@ -173,7 +173,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --start browser
     , ((modm            , xK_c), spawn "chrome")
     --start file manager
-    , ((modm            , xK_z), spawn "GTK_THEME=Adwaita:dark nautilus") -- GTK theme temporary fix
+    , ((modm            , xK_z), spawn "nautilus")
     --take a screenshot of selected region
     , ((modm , xK_Print ), unGrab *> spawn "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png  -s -e 'xclip -selection clipboard -t image/png -i $f'")
     --take a screenshot of focused window
