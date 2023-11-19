@@ -174,6 +174,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm            , xK_c), spawn "chrome")
     --start file manager
     , ((modm            , xK_z), spawn "nautilus")
+    --start calculator
+    , ((modm            , xK_m), spawn "calc")
     --take a screenshot of selected region
     , ((modm , xK_Print ), unGrab *> spawn "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png  -s -e 'xclip -selection clipboard -t image/png -i $f'")
     --take a screenshot of focused window
@@ -279,6 +281,7 @@ myManageHook = composeAll
     , className =? "pinentry-gtk-2"   --> doFloat
     , className =? "splash"           --> doFloat
     , className =? "toolbar"          --> doFloat
+    , className =? "Qalculate-gtk"    --> doFloat
     , className =? "mpv"              --> doShift (myWorkspaces !! 5)
     , className =? "Gimp"             --> doFloat
     , resource  =? "desktop_window"   --> doIgnore
