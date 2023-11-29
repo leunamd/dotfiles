@@ -18,6 +18,7 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.DynamicProperty
 import XMonad.Util.Ungrab
 import XMonad.Hooks.ManageHelpers
+import XMonad.Layout.ResizableTile
 
 
 
@@ -176,6 +177,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm            , xK_z), spawn "nautilus")
     --start calculator
     , ((modm            , xK_m), spawn "calc")
+    , ((modm            , xK_Up),    sendMessage MirrorExpand)
+    , ((modm            , xK_Right), sendMessage MirrorShrink)
+    , ((modm            , xK_Down),  sendMessage MirrorShrink)
     --take a screenshot of selected region
     , ((modm , xK_Print ), unGrab *> spawn "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png  -s -e 'xclip -selection clipboard -t image/png -i $f'")
     --take a screenshot of focused window
@@ -240,7 +244,7 @@ myLayout = lessBorders Screen $ onWorkspaces ["3","4","5","6","7"] fullLayout $ 
       noBorders Full)
        where
          -- default tiling algorithm partitions the screen into two panes
-         tiled   = Tall nmaster delta ratio
+         tiled   = ResizableTall nmaster delta ratio []
 
          -- The default number of windows in the master pane
          nmaster = 1
