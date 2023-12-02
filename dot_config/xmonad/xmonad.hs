@@ -181,7 +181,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm            , xK_Right), sendMessage MirrorShrink)
     , ((modm            , xK_Down),  sendMessage MirrorShrink)
     --take a screenshot of selected region
-    , ((modm , xK_Print ), unGrab *> spawn "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png  -s -e 'xclip -selection clipboard -t image/png -i $f'")
+    , ((modm , xK_Print ), unGrab *> spawn "scrot -a $(slop -f '%x,%y,%w,%h') ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png -e 'xclip -selection clipboard -t image/png -i $f'")
     --take a screenshot of focused window
     , ((modm .|. shiftMask, xK_Print ), spawn "scrot ~/Pictures/Screenshots/window_%Y-%m-%d_%H-%M-%S.png -u -e 'xclip -selection clipboard -t image/png -i $f'")
      --take a screenshot of left monitor
