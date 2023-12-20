@@ -1,0 +1,21 @@
+[Default Applications]
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/mailto=google-chrome.desktop
+application/pdf=google-chrome.desktop
+x-scheme-handler/webcal=google-chrome.desktop
+image/png=google-chrome.desktop
+text/markdown=obsidian.desktop
+application/x-mimearchive=google-chrome.desktop
+
+[Added Associations]
+application/pdf=google-chrome.desktop;
+x-scheme-handler/discord=google-chrome.desktop;
+image/png=google-chrome.desktop;
+text/markdown=obsidian.desktop;
+application/x-zerosize=vim.desktop;
+application/x-mimearchive=google-chrome.desktop;
+audio/x-mod=org.gnome.Nautilus.desktop;
