@@ -49,7 +49,7 @@ export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
 alias vim="nvim"
 alias ls='ls --color=auto'
 alias streamlink='streamlink --twitch-ttvlol'
-alias update-system='yay -Syu --devel --sudoloop --noconfirm && flatpak update -y'
+alias update-system='yay -Syu --devel --sudoloop --noconfirm && omz update && flatpak update -y'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias update-mkinit='sudo mkinitcpio -P'
 alias schezmoi='sudo chezmoi --destination /etc --source /etc/chezmoi/data --working-tree /etc/chezmoi/data --config /etc/chezmoi/chezmoi.toml'
