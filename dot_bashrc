@@ -30,8 +30,8 @@ unset rc
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export QT_STYLE_OVERRIDE=adwaita-dark
-export SYSTEMD_EDITOR=vim
-export EDITOR=vim
+export SYSTEMD_EDITOR=nvim
+export EDITOR=nvim
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
@@ -46,6 +46,7 @@ export XMONAD_DATA_DIR=$HOME/.local/share/xmonad
 #vulkan
 export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
 #aliases
+alias vim="nvim"
 alias ls='ls --color=auto'
 alias streamlink='streamlink --twitch-ttvlol'
 alias update-system='yay -Syu --devel --sudoloop --noconfirm && flatpak update -y'
