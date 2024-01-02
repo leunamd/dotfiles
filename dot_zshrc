@@ -133,6 +133,7 @@ alias start-vm='sudo systemctl restart libvirtd && sudo virsh start win10_ltsc &
 alias stop-vm='sudo virsh destroy win10_ltsc --graceful'
 alias gpu-lspci='lspci -k | grep -A 3 -E "(VGA|3D)"'
 alias hotspot='sudo rfkill unblock all && sudo create_ap wlp5s0 enp6s0 camera-manuel 1234567890'
+alias vim='nvim'
 
 
 #git fast commands
