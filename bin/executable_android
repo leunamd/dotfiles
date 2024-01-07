@@ -1,0 +1,17 @@
+#! /usr/bin/bash
+killall -9 weston
+sudo systemctl restart waydroid-container.service
+echo 'restart waydroid container'
+sleep 2
+if [ -z "$(pgrep weston)" ]; then
+    weston --xwayland --socket='wayland-0' &> /dev/null &
+    echo 'start weston'
+fi
+sleep 2 &&
+XDG_SESSION_TYPE='wayland' DISPLAY=':1' alacritty -e sh -c '/usr/bin/waydroid show-full-ui' &
+echo 'show waydroid UI'
+while [ -n "$(pgrep weston)" ];do
+    sleep 1
+done
+sudo systemctl stop waydroid-container.service
+echo 'stop waydroid container'
