@@ -1,4 +1,8 @@
 #!/bin/sh
-while true; do
+if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+    wl-paste -p --watch wl-copy -p ''
+fi
+
+while [ "$XDG_SESSION_TYPE" == "x11" ]; do
     xsel -fin </dev/null
 done
