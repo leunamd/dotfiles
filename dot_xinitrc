@@ -55,7 +55,7 @@ fi
 #exec xterm -geometry 80x66+0+0 -name login
 
 case $(tty | cut -b9-) in
-  (1) exec xmonad    ;;
+  (1) XDG_SESSION_TYPE=x11 exec xmonad;;
   (2) exec qtile start;;
 esac
 
