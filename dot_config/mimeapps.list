@@ -10,6 +10,7 @@ x-scheme-handler/webcal=google-chrome.desktop
 image/png=google-chrome.desktop
 text/markdown=obsidian.desktop
 application/x-mimearchive=google-chrome.desktop
+x-scheme-handler/magnet=google-chrome.desktop
 
 [Added Associations]
 application/pdf=google-chrome.desktop;
