@@ -155,3 +155,4 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+bindkey -s ^f "tmux-sessionizer\n"
