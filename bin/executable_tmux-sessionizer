@@ -23,5 +23,5 @@ if ! tmux has-session -t=$selected_name 2> /dev/null; then
 fi
 
 if ! tmux switch-client -t $selected_name 2> /dev/null; then
-    tmux a
+    tmux a -t $selected_name
 fi
