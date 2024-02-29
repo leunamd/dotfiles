@@ -375,7 +375,7 @@ myStartupHook = do
   spawnOnce "disable-middle-click-paste"
   spawn "~/.config/xmonad/scripts/systray.sh"
   --foreground applications
-  spawnOnce "discord"
+  spawnOnce "vesktop"
   spawnOnce "telegram-desktop"
   spawnOnce "spotify"
   spawnOnce "obsidian"
