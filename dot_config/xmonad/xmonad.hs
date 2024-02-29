@@ -15,8 +15,8 @@ import XMonad.Actions.SpawnOn
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.NoBorders
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.DynamicProperty
-import XMonad.Util.Ungrab
+import XMonad.Hooks.OnPropertyChange
+import XMonad.Operations
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.ResizableTile
 
@@ -292,6 +292,7 @@ myManageHook = composeAll
     , resource  =? "kdesktop"         --> doIgnore
     , className =? "discord"          --> doShift (myWorkspaces !! 2)
     , className =? "WebCord"          --> doShift (myWorkspaces !! 2)
+    , className =? "vesktop"          --> doShift (myWorkspaces !! 2)
     , className =? "TelegramDesktop"  --> doShift (myWorkspaces !! 2)
     , className =? "Virt-manager"     --> doShift (myWorkspaces !! 6)
     , className =? "looking-glass-client" --> doShift (myWorkspaces !! 6)
@@ -405,7 +406,7 @@ main = do
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook,
-        handleEventHook    = myEventHook <+> dynamicPropertyChange "WM_NAME" (title=? "Steam"   --> doShift (myWorkspaces !! 4)),--steam update popup gets launched with empty wm class
+        handleEventHook    = myEventHook <+> onXPropertyChange "WM_NAME" (title=? "Steam"   --> doShift (myWorkspaces !! 4)),--steam update popup gets launched with empty wm class
         startupHook        = myStartupHook,
         logHook            = dynamicLogWithPP $ myXmobarPP myXmobar
     }
