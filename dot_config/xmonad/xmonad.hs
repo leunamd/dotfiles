@@ -369,6 +369,7 @@ myStartupHook = do
   spawnOnce "solaar --window=hide"
   spawnOnce "joystickwake"
   spawnOnce "disable-middle-click-paste"
+  spawnOnce "hp-systray"
   spawn "~/.config/xmonad/scripts/systray.sh"
   --foreground applications
   spawnOnce "discord"
