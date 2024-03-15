@@ -1,10 +1,10 @@
 [Groups/0]
 # Group Name
-Name="Group 1"
+Name="Group 2"
 # Layout
 Default Layout=it
 # Default Input Method
-DefaultIM=hangul
+DefaultIM=keyboard-us
 
 [Groups/0/Items/0]
 # Name
@@ -14,17 +14,17 @@ Layout=
 
 [Groups/0/Items/1]
 # Name
-Name=hangul
+Name=keyboard-us
 # Layout
 Layout=
 
 [Groups/1]
 # Group Name
-Name="Group 2"
+Name="Group 1"
 # Layout
 Default Layout=it
 # Default Input Method
-DefaultIM=keyboard-us
+DefaultIM=hangul
 
 [Groups/1/Items/0]
 # Name
@@ -34,7 +34,7 @@ Layout=
 
 [Groups/1/Items/1]
 # Name
-Name=keyboard-us
+Name=hangul
 # Layout
 Layout=
 
