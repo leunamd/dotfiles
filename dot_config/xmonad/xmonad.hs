@@ -299,7 +299,9 @@ myManageHook = composeAll
     , className ^? "league"           --> doShift (myWorkspaces !! 4)
     , className ^? "riot"             --> doShift (myWorkspaces !! 4)
     , className =? "Lutris"           --> doShift (myWorkspaces !! 4)
+    , className =? "polaris-win64-shipping.exe" --> doShift (myWorkspaces !! 4)
     , className =? "code-oss"         --> doShift (myWorkspaces !! 6)
+    , className =? "Code"             --> doShift (myWorkspaces !! 6)
     , className =? "leagueclientux.exe" --> doFloatAt 0 24
     , className =? "league of legends.exe" --> doShift (myWorkspaces !! 4)
     , (className =? "Google-chrome" <&&> resource =? "Dialog") --> doFloat
