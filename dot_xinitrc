@@ -53,7 +53,7 @@ fi
 #xterm -geometry 80x50+494+51 &
 #xterm -geometry 80x20+494-0 &
 #exec xterm -geometry 80x66+0+0 -name login
-
+xsetroot -cursor_name left_ptr
 case $(tty | cut -b9-) in
   (1) XDG_SESSION_TYPE=x11 exec xmonad;;
   (2) exec qtile start;;
