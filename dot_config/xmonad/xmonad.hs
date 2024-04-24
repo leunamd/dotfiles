@@ -171,7 +171,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --lock screen
     , ((modm .|. shiftMask, xK_l), spawn "loginctl lock-session")
     --start browser
-    , ((modm            , xK_c), spawn "google-chrome-unstable")
+    , ((modm            , xK_c), spawn "google-chrome-stable")
     --start file manager
     , ((modm            , xK_z), spawn "nautilus")
     --start calculator
