@@ -370,7 +370,7 @@ myStartupHook = do
   spawnOnce "xss-lock --transfer-sleep-lock -- lock"
   spawnOnce "solaar --window=hide"
   spawnOnce "joystickwake"
-  spawnOnce "disable-middle-click-paste"
+  spawnOnce "xmousepasteblock"
   spawnOnce "hp-systray"
   spawn "~/.config/xmonad/scripts/systray.sh"
   --foreground applications
