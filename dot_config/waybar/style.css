@@ -56,7 +56,17 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
+    color: #fcae1e;
+}
+
+#workspaces button.empty {
     color: #ffffff;
+}
+
+#workspaces button.active {
+    color: #ffff00;
+    border-radius: 1em;
+    background: rgba(0, 0, 0, 1);
 }
 
 #workspaces button:hover {
