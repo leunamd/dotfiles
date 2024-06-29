@@ -1,0 +1,19 @@
+####media keys
+#
+##state
+ctrl + alt + {KPEnter,KP4,KP6}
+  playerctl {play-pause,previous,next} --player=spotify
+#
+##position
+ctrl + alt + {KP7,KP9}
+  playerctl position {20-,20+} --player=spotify
+#
+###generic
+#
+##volume
+ctrl + alt + {KP1,KP3}
+  amixer set Master {2%-,2%+}
+#
+##play-pause
+ctrl + alt + KP0
+  playerctl play-pause --ignore-player=spotify
