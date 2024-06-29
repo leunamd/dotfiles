@@ -1,2 +1,16 @@
 #!/bin/bash
-env LD_PRELOAD=/usr/local/lib/spotify-adblock.so /usr/bin/spotify --uri=%U
+
+# Default command
+CMD="/usr/bin/spotify"
+
+# Check if the desktop session is Wayland
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    CMD="$CMD --enable-features=UseOzonePlatform --ozone-platform=wayland"
+fi
+
+# Add the URI argument placeholder
+CMD="$CMD --uri=%U"
+
+# Run the command with the preloaded library
+env LD_PRELOAD=/usr/local/lib/spotify-adblock.so $CMD
+
