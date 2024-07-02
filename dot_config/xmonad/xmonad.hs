@@ -294,6 +294,8 @@ myManageHook = composeAll
     , className =? "looking-glass-client" --> doShift (myWorkspaces !! 6)
     , className =? "steam"            --> doShift (myWorkspaces !! 4)
     , className ^? "steam_app_"       --> doShift (myWorkspaces !! 4)
+    , className =? "upc.exe"       --> doShift (myWorkspaces !! 4)
+    , className ^? "xdefiant.exe"       --> doShift (myWorkspaces !! 4)
     , className =? "Spotify"          --> doShift (myWorkspaces !! 3)
     , className =? "obsidian"         --> doShift (myWorkspaces !! 7)
     , className ^? "league"           --> doShift (myWorkspaces !! 4)
