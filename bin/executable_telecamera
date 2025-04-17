@@ -1,0 +1,2 @@
+#!/bin/bash
+mpv rtsp://192.168.0.27/ch0_0.h264 --cache=no
