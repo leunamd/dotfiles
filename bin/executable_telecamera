@@ -1,2 +1,2 @@
 #!/bin/bash
-mpv rtsp://192.168.0.27/ch0_0.h264 --cache=no
+mpv --no-cache --profile=low-latency --untimed --video-sync=desync --vd-lavc-threads=1 --hwdec=auto-safe rtsp://192.168.0.27/ch0_0.h264
