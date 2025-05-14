@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Disable screen saver, blanking and DPMS
+xset s off
+xset -dpms
+xset s noblank
+
+# Run the given command and wait for it to finish
+"$@"
+
+# Restore DPMS and screen saver settings
+xset +dpms
+xset dpms 0 0 300
+xset s on
