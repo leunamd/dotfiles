@@ -1,2 +1,8 @@
 #!/bin/bash
-ffplay -an -fflags nobuffer -fflags discardcorrupt -flags low_delay -hwaccel cuda rtsp://192.168.0.27/ch0_0.h264
+
+# Check the session type
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    ffplay -an -fflags nobuffer -fflags discardcorrupt -flags low_delay rtsp://192.168.0.27/ch0_0.h264
+else
+    ffplay -an -fflags nobuffer -fflags discardcorrupt -flags low_delay -hwaccel cuda rtsp://192.168.0.27/ch0_0.h264
+fi
