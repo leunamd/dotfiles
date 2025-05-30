@@ -38,7 +38,7 @@ myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 1
+myBorderWidth   = 1 
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -233,7 +233,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = lessBorders Screen $ onWorkspaces ["3","4","5","6","7"] fullLayout $ standardLayout
+myLayout = lessBorders Screen $ onWorkspaces ["3","4","7"] fullLayout $ standardLayout
   where
      standardLayout = avoidStruts ( tiled |||
       --Mirror tiled |||
@@ -283,21 +283,37 @@ myManageHook = composeAll
     , className =? "toolbar"          --> doFloat
     , className =? "Qalculate-gtk"    --> doFloat
     , className =? "mpv"              --> doShift (myWorkspaces !! 5)
+    , className =? "ffplay"              --> doShift (myWorkspaces !! 5)
     , className =? "Gimp"             --> doFloat
     , resource  =? "desktop_window"   --> doIgnore
     , resource  =? "kdesktop"         --> doIgnore
     , className =? "discord"          --> doShift (myWorkspaces !! 2)
+    , className =? "goofcord"         --> doShift (myWorkspaces !! 2)
     , className =? "WebCord"          --> doShift (myWorkspaces !! 2)
     , className =? "vesktop"          --> doShift (myWorkspaces !! 2)
     , className =? "TelegramDesktop"  --> doShift (myWorkspaces !! 2)
     , className =? "Virt-manager"     --> doShift (myWorkspaces !! 6)
     , className =? "looking-glass-client" --> doShift (myWorkspaces !! 6)
     , className =? "steam"            --> doShift (myWorkspaces !! 4)
+    , className =? "zenity"            --> doShift (myWorkspaces !! 4)
+    , className =? "elveron.exe"          --> doShift (myWorkspaces !! 4) <+> doSink
+    , className =? "elveron-launcher.exe" --> doShift (myWorkspaces !! 4)
+    , title =? "Elveron"          --> doShift (myWorkspaces !! 4) <+> doSink
+    , title =? "Elveron Launcher" --> doShift (myWorkspaces !! 4) 
+    , className =? "net-runelite-client-RuneLite"            --> doShift (myWorkspaces !! 4)
+    , className =? "net-runelite-launcher-Launcher"            --> doShift (myWorkspaces !! 4)
+    , className =? "BoltLauncher"            --> doShift (myWorkspaces !! 4)
     , className ^? "steam_app_"       --> doShift (myWorkspaces !! 4)
     , className =? "upc.exe"       --> doShift (myWorkspaces !! 4)
-    , className ^? "xdefiant.exe"       --> doShift (myWorkspaces !! 4)
+    , className =? "xdefiant.exe"       --> doShift (myWorkspaces !! 4)
     , className =? "Spotify"          --> doShift (myWorkspaces !! 3)
+    , className =? "PlayOnLinux"          --> doShift (myWorkspaces !! 6)
+    , className =? "m2classiclauncher.exe"          --> doShift (myWorkspaces !! 6)
+--    , className =? "battle.net.exe"          --> doShift (myWorkspaces !! 6)
+--    , className =? "hearthstone.exe"          --> doShift (myWorkspaces !! 6)
+    , className =? "m2c.exe"          --> doShift (myWorkspaces !! 5)
     , className =? "obsidian"         --> doShift (myWorkspaces !! 7)
+--    , className =? "hearthstone deck tracker.exe" --> doShift (myWorkspaces !! 7)
     , className ^? "league"           --> doShift (myWorkspaces !! 4)
     , className ^? "riot"             --> doShift (myWorkspaces !! 4)
     , className =? "Lutris"           --> doShift (myWorkspaces !! 4)
@@ -357,6 +373,7 @@ myStartupHook = do
   spawnOnce "xrandr --output DP-0 --primary --mode 1920x1080 --rate 144 --right-of HDMI-0 --output HDMI-0 --mode 1920x1080 --rate 60 --output DVI-I-1-0 --off --output HDMI-A-1-0 --off"
   --background applications
   spawnOnce "/usr/lib/geoclue-2.0/demos/agent"
+  spawnOnce "fcitx5"
   spawnOnce "lxsession"
   spawnOnce "numlockx"
   spawnOnce "~/.config/xmonad/scripts/volumeicon.sh"
@@ -379,7 +396,7 @@ myStartupHook = do
   spawnOnce "discord"
   spawnOnce "telegram-desktop"
   spawnOnce "spotify"
-  spawnOnce "obsidian"
+  --spawnOnce "obsidian"
   setWMName "LG3D"
 
 ------------------------------------------------------------------------
@@ -389,6 +406,7 @@ myStartupHook = do
 --
 main = do 
   myXmobar <- spawnPipe "xmobar -x 0 ~/.config/xmonad/xmobarrc"
+  myXmobar1 <- spawnPipe "xmobar -x 1 ~/.config/xmonad/xmobar1rc"
   xmonad $ docks $ ewmhFullscreen $ def
      {
         terminal           = myTerminal,
@@ -409,7 +427,8 @@ main = do
         manageHook         = myManageHook,
         handleEventHook    = myEventHook <+> onXPropertyChange "WM_NAME" (title=? "Steam"   --> doShift (myWorkspaces !! 4)),--steam update popup gets launched with empty wm class
         startupHook        = myStartupHook,
-        logHook            = dynamicLogWithPP $ myXmobarPP myXmobar
+        logHook            = dynamicLogWithPP (myXmobarPP myXmobar) 
+                           >> dynamicLogWithPP (myXmobarPP myXmobar1)
     }
 
 -- | Finally, a copy of the default bindings in simple textual tabular format.

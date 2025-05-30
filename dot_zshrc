@@ -124,7 +124,6 @@ export XMONAD_DATA_DIR=$HOME/.local/share/xmonad
 export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
 #aliases
 alias ls='ls --color=auto'
-alias streamlink='streamlink --twitch-ttvlol'
 alias update-system='yay -Syu --devel --sudoloop --noconfirm && flatpak update -y'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias update-mkinit='sudo mkinitcpio -P'
@@ -156,3 +155,7 @@ esac
 # pnpm end
 
 bindkey -s ^f "tmux-sessionizer\n"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/manuel/.lmstudio/bin"
+export XDG_DATA_DIRS=/usr/share:/usr/local/share:$XDG_DATA_DIRS
