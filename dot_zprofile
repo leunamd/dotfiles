@@ -1,3 +1,11 @@
-if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-  exec startx
+if [ -z "$DISPLAY" ]; then
+  case "$XDG_VTNR" in
+    1)
+      exec Hyprland
+      ;; 
+    2)
+      exec startx
+      ;;
+ esac
 fi
+

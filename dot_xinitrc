@@ -55,8 +55,8 @@ fi
 #exec xterm -geometry 80x66+0+0 -name login
 xsetroot -cursor_name left_ptr
 case $(tty | cut -b9-) in
-  (1) XDG_SESSION_TYPE=x11 exec xmonad;;
-  (2) exec qtile start;;
+  (2) XDG_SESSION_TYPE=x11 exec xmonad;;
+#  (2) exec Hyprland;;
 esac
 
 #exec xmonad
