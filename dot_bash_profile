@@ -4,6 +4,9 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 2 ]; then
   exec startx
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/manuel/.lmstudio/bin"
