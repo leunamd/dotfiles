@@ -4,13 +4,17 @@ x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
-x-scheme-handler/mailto=google-chrome.desktop
+x-scheme-handler/mailto=google-chrome-unstable.desktop
 application/pdf=google-chrome.desktop
 x-scheme-handler/webcal=google-chrome.desktop
 image/png=google-chrome.desktop
 text/markdown=obsidian.desktop
 application/x-mimearchive=google-chrome.desktop
 x-scheme-handler/magnet=google-chrome.desktop
+x-scheme-handler/discord-409416265891971072=discord-409416265891971072.desktop
+x-scheme-handler/tonsite=userapp-Telegram Desktop-VGP862.desktop
+x-scheme-handler/rtsp=mpv-rtsp.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-D3U862.desktop
 
 [Added Associations]
 application/pdf=google-chrome.desktop;
@@ -20,3 +24,6 @@ text/markdown=obsidian.desktop;
 application/x-zerosize=vim.desktop;
 application/x-mimearchive=google-chrome.desktop;
 audio/x-mod=org.gnome.Nautilus.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;userapp-Telegram Desktop-VGP862.desktop;
+application/octet-stream=vim.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-D3U862.desktop;
