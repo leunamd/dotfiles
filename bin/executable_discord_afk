@@ -1,0 +1,7 @@
+#!/bin/bash
+# Move to AFK channel
+discover-overlay --rpc --moveto=1270288233481375774
+
+sleep 1
+# Deaf yourself in Discord
+discover-overlay --rpc --deaf
