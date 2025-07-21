@@ -1,0 +1,10 @@
+[Unit]
+Description=Kill Wine processes before user session stops
+Before=exit.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/bin/kill-wine
+
+[Install]
+WantedBy=default.target

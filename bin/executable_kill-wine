@@ -1,0 +1,4 @@
+#!/bin/bash
+pkill -9 winedevice.exe
+pkill -9 wineserver
+pkill -9 wine
