@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Kill Overwolf-related processes (case-insensitive)
+pkill -fi overwolf
+
+# Check if Warframe.x64.exe is running
+if pgrep -fi "Warframe.x64.exe" > /dev/null; then
+    # If running, export data
+    echo 'Warframe up and running, exporting data'
+    warframe-data-export &
+    sleep 5
+
+    # Kill warframe-data-export
+    pkill -fi "warframe-api-helper.exe"
+    pkill -fi conhost
+    sleep 1
+else
+    # If not running, just wait for Overwolf to be killed
+    sleep 2
+fi
+
+echo 'Running Overwolf'
+# Run Overwolf
+protonhax run 230410 "/home/manuel/.local/share/Steam/steamapps/compatdata/230410/pfx/drive_c/Program Files (x86)/Overwolf/Overwolf.exe"

@@ -1,0 +1,2 @@
+#!/bin/bash
+cd ~/.local/share/Steam/steamapps/compatdata/230410/pfx/drive_c/users/steamuser/AppData/Local/AlecaFrame/ && protonhax run 230410 "/home/manuel/.local/share/Steam/steamapps/compatdata/230410/pfx/drive_c/users/steamuser/AppData/Local/AlecaFrame/warframe-api-helper.exe"
