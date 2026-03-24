@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import socket, json, struct, uuid, subprocess, time, os, signal, threading, urllib.request, urllib.parse, importlib.util
+import socket, json, struct, uuid, time, os, signal, threading, urllib.request, urllib.parse, importlib.util
 from datetime import datetime
 
 SOCKET = f"/run/user/{os.getuid()}/discord-ipc-0"
@@ -141,12 +141,8 @@ def move_to_afk():
     log(f"Moving to AFK channel {afk_channel}")
     ipc_cmd(sock, "SELECT_VOICE_CHANNEL", {"channel_id": afk_channel, "force": True})
     time.sleep(1)
-    default_source = subprocess.check_output(["pactl", "get-default-source"]).decode().strip()
-    mute = subprocess.run(["pactl", "get-source-mute", default_source],
-                          capture_output=True, text=True).stdout
-    if "no" in mute:
-        log("Deafening")
-        ipc_cmd(sock, "SET_VOICE_SETTINGS", {"deaf": True})
+    log("Deafening")
+    ipc_cmd(sock, "SET_VOICE_SETTINGS", {"deaf": True})
 
 def schedule_move_back():
     global move_back_timer
