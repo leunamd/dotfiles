@@ -1,16 +1,11 @@
 #!/bin/bash
-# Move to AFK channel
-if pactl list sink-inputs | grep -q 'application.process.binary = "Discord"'; then
-	echo 'discord_afk: moved to afk channel'
-	discover-overlay --rpc --moveto=1270288233481375774
-	
-	default_source=$(pactl get-default-source)
-	mute_status=$(pactl get-source-mute "$default_source")
-	if echo "$mute_status" | grep -q "no"; then
-		sleep 1
-		# Deaf yourself in Discord
-		discover-overlay --rpc --deaf
-	fi
+timestamp() {
+    date "+%Y-%m-%d %H:%M:%S"
+}
+
+if [ -f /tmp/discord-afk.pid ]; then
+    echo "discord_afk $(timestamp): AFK triggered"
+    kill -USR1 $(cat /tmp/discord-afk.pid)
 else
-	echo 'discord_afk: discord input not found'
+    echo "discord_afk $(timestamp): daemon not running"
 fi
