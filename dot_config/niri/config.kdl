@@ -117,7 +117,7 @@ spawn-at-startup "dunst"
 //spawn-at-startup "sh" "-c" "rm -f ~/hypridle.log && hypridle --config ~/.config/hypr/hypridle-niri.conf >> ~/hypridle.log 2>&1"
 spawn-at-startup "sh" "-c" "rm -f ~/swayidle.log && swayidle -d -w lock 'pidof swaylock >/dev/null || swaylock -c 000000 -e -n -f; sleep 2; niri msg outputs | grep -q Disabled || niri msg action power-off-monitors' unlock 'niri msg action power-on-monitors; [ -f /tmp/discord-afk.pid ] && kill -USR2 $(cat /tmp/discord-afk.pid)' timeout 15 'pidof swaylock >/dev/null && niri msg action power-off-monitors' timeout 300 'discord_afk' timeout 310 'loginctl lock-session' timeout 350 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors' before-sleep 'loginctl lock-session' after-resume 'niri msg action power-on-monitors' >> ~/swayidle.log 2>&1"
 spawn-at-startup "sh" "-c" "~/scripts/inhibitor-monitor.sh"
-spawn-at-startup "sh" "-c" "python3 ~/scripts/discord-afk-daemon.py >> ~/discord-afk.log 2>&1"
+spawn-at-startup "sh" "-c" "rm -f ~/discord-afk.log && python3 ~/scripts/discord-afk-daemon.py >> ~/discord-afk.log 2>&1"
 spawn-at-startup "nm-applet"
 spawn-at-startup "blueman-applet"
 spawn-at-startup "sh" "-c" "rm -f ~/.hplip/hp-systray.lock && hp-systray"
@@ -134,7 +134,7 @@ spawn-at-startup "start-tmux"
 spawn-at-startup "telecamera"
 spawn-at-startup "google-chrome-stable"
 spawn-at-startup "brave"
-spawn-at-startup "com.stremio.stremio"
+spawn-at-startup "stremio"
 
 screenshot-path "~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"
 
@@ -526,8 +526,6 @@ window-rule {
 }
 window-rule {
     match at-startup=true app-id="discord"
-    open-on-workspace "social"
-    open-maximized-to-edges true
     open-focused true
 }
 window-rule {
@@ -618,12 +616,6 @@ window-rule {
 
 // ── Workspace 6 — Media ──────────────────────────────────────
 window-rule {
-    match at-startup=true app-id="mpv"
-    open-on-workspace "media"
-    open-focused false
-    open-maximized-to-edges true
-}
-window-rule {
     match app-id="mpv"
     open-on-workspace "browser"
     open-focused true
@@ -631,13 +623,14 @@ window-rule {
     open-fullscreen true
 }
 window-rule {
-    match app-id="ffplay"
+    match at-startup=true app-id="mpv"
     open-on-workspace "media"
     open-focused false
     open-maximized-to-edges true
+    open-fullscreen false
 }
 window-rule {
-    match at-startup=true app-id="com.stremio.stremio"
+    match app-id="ffplay"
     open-on-workspace "media"
     open-focused false
     open-maximized-to-edges true
@@ -645,11 +638,19 @@ window-rule {
 
 window-rule {
     match app-id="com.stremio.stremio"
-    open-on-workspace "media"
+    open-on-workspace "browser"
     open-focused true
-    open-maximized-to-edges true
+    open-maximized-to-edges false
+    open-fullscreen true
 }
 
+window-rule {
+    match at-startup=true app-id="com.stremio.stremio"
+    open-on-workspace "media"
+    open-focused false
+    open-maximized-to-edges true
+    open-fullscreen false
+}
 // ── Workspace 7 — Dev / VMs ──────────────────────────────────
 window-rule {
     match app-id="virt-manager"
