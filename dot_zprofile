@@ -1,9 +1,12 @@
 if [ -z "$DISPLAY" ]; then
   case "$XDG_VTNR" in
     1)
-      exec Hyprland
+      exec niri-session -l
       ;; 
     2)
+      exec Hyprland
+      ;;
+    3)
       exec startx
       ;;
  esac
