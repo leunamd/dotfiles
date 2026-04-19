@@ -1,10 +1,10 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
     padding: 0;
     margin: 0;
-    min-height: 28px;
+    min-height: 0;
 }
 
 window#waybar {
@@ -118,6 +118,8 @@ button:hover {
 #window,
 #workspaces {
     margin: 0 4px;
+    margin-top: -50px;
+    margin-bottom: -50px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -216,8 +218,13 @@ label:focus {
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
+    background-color: #fff0f5;
     color: #2a5c45;
+}
+
+#pulseaudio.source-muted {
+    background-color: #ff0000;
+    color: #000000;
 }
 
 #wireplumber {
@@ -341,4 +348,16 @@ label:focus {
 
 #privacy-item.audio-out {
     background-color: #0069d4;
+}
+
+#custom-hypridle.sleep {
+    color: gray;
+}
+
+#custom-hypridle.awake {
+    color: red;
+}
+
+#custom-hypridle.unknown {
+    color: gray;
 }
