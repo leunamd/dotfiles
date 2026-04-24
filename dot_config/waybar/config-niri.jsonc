@@ -14,6 +14,7 @@
     ],
     "modules-right": [
 //       "mpd",
+        "custom/music",
         "custom/hypridle",
         "idle_inhibitor",
 //        "custom/media",
@@ -196,5 +197,13 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
+   }, 
+   "custom/music": {
+       "format": "{}",
+       "return-type": "json",
+       "on-click": "playerctl play-pause --player=spotify",
+       "on-scroll-up": "playerctl previous --player=spotify",
+       "on-scroll-down": "playerctl next --player=spotify",
+       "exec": "waybar-module-music --whitelist 'spotify' --play-icon '▶' --pause-icon '⏸'"
+   }
 }
